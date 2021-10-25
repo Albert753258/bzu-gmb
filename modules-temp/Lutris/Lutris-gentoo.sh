@@ -37,7 +37,7 @@ then
 tput setaf 1; echo "При установки Lutris произошла ошибка!"  || let "error += 1"
 tput sgr0
 else
-tput setaf 2; echo "Статуст установки Lutris:${module_installing}"
+tput setaf 2; echo "Статуст установки Lutris: ${module_installing}"
 tput sgr0
 #тестовый запуск Lutris
 lutris & sleep 5;sudo -S killall lutris
