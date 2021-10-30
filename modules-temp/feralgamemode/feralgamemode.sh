@@ -5,6 +5,7 @@
 
 # определение имени файла, папки где находиться скрипт и версию скрипта
 name_script0=`basename "$0"`
+source /etc/os-release
 name_script=`echo ${name_script0} | sed "s|.sh||g"`
 #echo ${name_script}
 script_dir0=$(cd $(dirname "$0") && pwd); name_cut="/modules-temp/${name_script}"
@@ -22,7 +23,13 @@ tput setaf 2; echo "Установка утилиты GameMode от Feral Intera
 tput sgr0
 
 #запуск основных команд модуля
+if [ "${NAME}" == "Gentoo" ]
+then
+sudo -S emerge games-util/gamemode || let "error += 1"
+#echo "Установлена утилита:"`eix-installed -a | grep sys-apps/inxi`
+else
 sudo -S apt install -f -y --reinstall gamemode || let "error += 1"
+fi
 
 #формируем информацию о том что в итоге установили и показываем в терминал
 mesa_version=`inxi -G | grep "Mesa"`  || let "error += 1"

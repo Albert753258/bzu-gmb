@@ -1,11 +1,7 @@
-bzu-gmb-launcher.sh
-
-
-
+#TODO
 corectrl
 corectrl2
 cpu-x
-feralgamemode
 furmark-pack
 gdebi
 glances
@@ -15,11 +11,8 @@ godot-ppa
 goverlay
 goverlay-ppa
 kate-editor-ppa
-liquorix-kernel-stable
 mangohud
 mangohud-ppa
-mesa-kisak
-mesa-oibaf
 obs-studio-ppa
 playonlinux
 port-proton
@@ -28,20 +21,25 @@ proton-ge
 psensor-all
 steam
 tfm-vulkan
-ubuntu-kernel-lowlatency
 visual-studio-code-ppa
 vkbasalt
 vscodium-portable
-xanmod-kernel-stable
-xanmod-kernel-latest
 xboxdrv
 
-
-
-DONE:
+#FULL-DONE:
 inxi
+feralgamemode
 
-
-
-HALF-DONE
+#HALF-DONE
 lutris - fix HADL
+
+#SYSTEM
+bzu-gmb-launcher.sh
+
+#HARD
+xanmod-kernel-stable
+xanmod-kernel-latest
+liquorix-kernel-stable
+ubuntu-kernel-lowlatency
+mesa-kisak
+mesa-oibaf
