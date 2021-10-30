@@ -64,7 +64,7 @@ GameTools
 GameMode это утилита от компании Feral Interactive, который на лету изменяет различные системные настройки Linux для достижения максимальной производительности игровых приложений.
 Яцына М.А.
 feralgamemode
-Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental
+Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental Gentoo/Linux
 #
 #
 root
@@ -184,7 +184,7 @@ Monitoring
 inxi это консольная утилита для вывода информации о комплектующих ПК или ноутбука, версии ядра, драйвера видеокарты, датчиков температуры и загрузки системы, что бы получить полную информацию нужно открыть терминал: ctrl+alt+t и ввести: inxi -Fxs 
 Яцына М.А.
 inxi
-Ubuntu 20.04.3 LTS Ubuntu 21.10 experimental
+Ubuntu 20.04.3 LTS Ubuntu 21.10 experimental Gentoo/Linux
 #
 #
 root
