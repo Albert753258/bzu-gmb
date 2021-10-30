@@ -6,6 +6,7 @@
 [ "$UID" -eq 0 ] || { zenity --error --text="Этот скрипт нужно запускать из под root!"; exit 1;}
 
 # определение имени файла, папки где находиться скрипт и версию скрипта
+source /etc/os-release
 name_script0=`basename "$0"`
 name_script=`echo ${name_script0} | sed "s|.sh||g"`
 script_dir0=$(cd $(dirname "$0") && pwd); name_cut="/modules-temp/${name_script}"
@@ -26,13 +27,20 @@ tput setaf 2; echo "Установка утилиты для запуска ко
 tput sgr0
 
 #запуск основных команд модуля
+module_installing=""
 sudo -S killall lutris || true
+if [ "${NAME}" == "Gentoo" ]
+then
+sudo emerge lutris || let "error += 1"
+module_installing=`eix-installed -a | grep games-util/lutris` || true
+else
 sudo -S add-apt-repository -y ppa:lutris-team/lutris  || let "error += 1"
 sudo -S apt-get install -f -y --reinstall lutris || let "error += 1"
+module_installing=`dpkg -s lutris | grep installed` || true
+fi
 
 
 #формируем информацию о том что в итоге установили и показываем в терминал
-module_installing=`dpkg -s lutris | grep installed` || true
 if [[ "${module_installing}" == "" ]]
 then
 tput setaf 1; echo "При установки Lutris произошла ошибка!"  || let "error += 1"
