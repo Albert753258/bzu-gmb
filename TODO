@@ -11,8 +11,6 @@ godot-ppa
 goverlay
 goverlay-ppa
 kate-editor-ppa
-mangohud
-mangohud-ppa
 obs-studio-ppa
 playonlinux
 port-proton
@@ -29,6 +27,7 @@ xboxdrv
 #FULL-DONE:
 inxi
 feralgamemode
+mangohud-ppa
 
 #HALF-DONE
 lutris - fix HADL
@@ -43,3 +42,11 @@ liquorix-kernel-stable
 ubuntu-kernel-lowlatency
 mesa-kisak
 mesa-oibaf
+
+#HADL UNDONE
+mangohud
+
+
+
+Kernel config options
+mangohud - powercap
