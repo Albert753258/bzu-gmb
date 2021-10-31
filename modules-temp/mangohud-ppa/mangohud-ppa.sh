@@ -48,7 +48,7 @@ fi
 cd
 echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || true
 #формируем информацию о том что в итоге установили и показываем в терминал
-mesa_version=`inxi -G | grep "Mesa"`  || let "error += 1"
+mesa_version=`inxi -G | grep -E "Mesa|NVIDIA|Intel"`  || let "error += 1"
 tput setaf 2; echo "Установлен драйвер:${mesa_version}, тестируем мониторинг!"  || let "error += 1"
 #сброс цвета текста в терминале
 tput sgr0
