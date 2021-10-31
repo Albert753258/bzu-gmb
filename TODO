@@ -8,7 +8,6 @@ glances
 gnome-ext-pack-2004
 gnome-ext-pack-2110
 godot-ppa
-goverlay
 goverlay-ppa
 kate-editor-ppa
 obs-studio-ppa
@@ -20,7 +19,6 @@ psensor-all
 steam
 tfm-vulkan
 visual-studio-code-ppa
-vkbasalt
 vscodium-portable
 xboxdrv
 
@@ -28,6 +26,7 @@ xboxdrv
 inxi
 feralgamemode
 mangohud-ppa
+vkbasalt-ppa
 
 #HALF-DONE
 lutris - fix HADL
@@ -45,6 +44,8 @@ mesa-oibaf
 
 #HADL UNDONE
 mangohud
+vkbasalt
+goverlay
 
 
 
