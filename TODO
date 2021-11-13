@@ -6,7 +6,7 @@ furmark-pack
 glances
 gnome-ext-pack-2004
 gnome-ext-pack-2110
-goverlay-ppa
+godot-ppa
 kate-editor-ppa
 obs-studio-ppa
 playonlinux
@@ -25,7 +25,7 @@ inxi
 feralgamemode
 mangohud-ppa
 vkbasalt-ppa
-godot-ppa
+goverlay-ppa
 
 #HALF-DONE
 lutris - fix HODL
