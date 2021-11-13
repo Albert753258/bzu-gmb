@@ -3,11 +3,9 @@ corectrl
 corectrl2
 cpu-x
 furmark-pack
-gdebi
 glances
 gnome-ext-pack-2004
 gnome-ext-pack-2110
-godot-ppa
 goverlay-ppa
 kate-editor-ppa
 obs-studio-ppa
@@ -27,9 +25,10 @@ inxi
 feralgamemode
 mangohud-ppa
 vkbasalt-ppa
+godot-ppa
 
 #HALF-DONE
-lutris - fix HADL
+lutris - fix HODL
 
 #SYSTEM
 bzu-gmb-launcher.sh
@@ -42,10 +41,15 @@ ubuntu-kernel-lowlatency
 mesa-kisak
 mesa-oibaf
 
-#HADL UNDONE
+#HODL UNDONE
 mangohud
 vkbasalt
 goverlay
+
+
+
+#INCOMPATIBLE
+gdebi
 
 
 

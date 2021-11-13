@@ -30,11 +30,20 @@ tput setaf 2; echo "Установка открытой утилиты Goverlay 
 tput sgr0
 
 #запуск основных команд модуля
-echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
+echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp"
 echo "${pass_user}" | sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
+
+if [ "${NAME}" == "Gentoo" ]
+then
+sudo -S emerge app-misc/goverlay || let "error += 1"
+else
 echo "${pass_user}" | sudo -S add-apt-repository -y ppa:flexiondotorg/mangohud  || let "error += 1"
 echo "${pass_user}" | sudo -S apt install -f -y goverlay || let "error += 1"
+fi
+
+
+
 cd
 echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || true
 #формируем информацию о том что в итоге установили и показываем в терминал
