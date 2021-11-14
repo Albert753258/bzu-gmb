@@ -1,8 +1,5 @@
 #TODO
-corectrl
-corectrl2
 cpu-x
-furmark-pack
 glances
 gnome-ext-pack-2004
 gnome-ext-pack-2110
@@ -13,7 +10,6 @@ playonlinux
 port-proton
 port-proton-addons
 proton-ge
-psensor-all
 steam
 tfm-vulkan
 visual-studio-code-ppa
@@ -26,6 +22,7 @@ feralgamemode
 mangohud-ppa
 vkbasalt-ppa
 goverlay-ppa
+psensor-all
 
 #HALF-DONE
 lutris - fix HODL
@@ -40,6 +37,9 @@ liquorix-kernel-stable
 ubuntu-kernel-lowlatency
 mesa-kisak
 mesa-oibaf
+furmark-pack - не запускается из-за версии python
+corectrl
+corectrl2
 
 #HODL UNDONE
 mangohud

@@ -174,7 +174,7 @@ Monitoring
 Psensor это утилита для мониторинга сенсоров комплектующих вашего ПК или ноутбука, ее можно назвать аналогом HWmonitor в среде windows, основные плюсы: построение графиков, мониторинг с фиксацией состояний датчиков: в реальном времени, минимальный, максимальный. 
 Яцына М.А.
 psensor-all
-Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental
+Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental Gentoo/Linux
 #
 #
 root
