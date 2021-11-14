@@ -194,7 +194,7 @@ Monitoring
 Glances это консольная утилита для мониторинга операционных систем на ядре Linux, вы сможете получить данные о датчика температуры, загрузке системы, запущенных процессов, состояния сети и т.д. Для запуска утилиты в терминале запустите эту команду: glances --enable-plugin sensors
 Mirthless D
 glances
-Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental
+Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental Gentoo/Linux
 #
 #
 root
