@@ -13,7 +13,6 @@ script_dir0=$(cd $(dirname "$0") && pwd); name_cut="/modules-temp/${name_script}
 script_dir=`echo ${script_dir0} | sed "s|${name_cut}||g"`
 version0=`cat "${script_dir}/config/name_version"`
 version="${version0}"
-source /etc/os-release
 
 #объявляем нужные переменные для скрипта
 date_install=`date`
@@ -23,19 +22,10 @@ tput setaf 2; echo "Установка утилиты Psensor для монит�
 tput sgr0
 
 #запуск основных команд модуля
-if [ "${NAME}" == "Gentoo" ]
-then
-sudo -S emerge app-misc/psensor || let "error += 1"
-echo "Установлена утилита:"`eix-installed -a | grep app-misc/psensor`
-else
 sudo -S apt install -f -y --reinstall psensor || let "error += 1"
-#формируем информацию о том что в итоге установили и показываем в терминал
-sudo dpkg --list | echo "Установлена утилита:"`grep "psensor" | sed s/"ii"//g`
-#сброс цвета текста в терминале
-tput sgr0
-fi
 
 #формируем информацию о том что в итоге установили и показываем в терминал
+sudo dpkg --list | echo "Установлена утилита:"`grep "psensor" | sed s/"ii"//g`
 #сброс цвета текста в терминале
 tput sgr0
 #тестовый запуск Psensor

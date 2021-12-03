@@ -16,7 +16,6 @@ version="${version0}"
 script_dir_install=`cat "${script_dir}/config/script_dir_install"`
 #объявляем нужные переменные для скрипта
 date_install=`date`
-source /etc/os-release
 
 #даем информацию в терминал какой модуль установливается
 tput setaf 2; echo "Установка утилиты glances [https://github.com/nicolargo/glances]. Версия скрипта 1.0, автор: Mirthless D"
@@ -24,35 +23,25 @@ tput sgr0
 
 #запуск основных команд модуля
 sudo -S killall glances || true
-sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp"
+sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 sudo -S rm -r "/usr/share/${name_script}-start" || true
 sudo -S rm "/usr/share/applications/${name_script}.desktop" || true
-
-
-if [ "${NAME}" == "Gentoo" ]
-then
-sudo -S emerge sys-process/glances || let "error += 1"
-echo "Установлена утилита:"`eix-installed -a | grep sys-process/glances`
-else
 sudo -S apt install -f -y --reinstall glances
-tput setaf 2
-sudo -S dpkg --list | echo "Установлена утилита:"`grep "${name_script}" | sed s/"ii"//g`
-#сброс цвета текста в терминале
-tput sgr0
-fi
-
-
-
 sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp"|| let "error += 1"
-wget "https://drive.google.com/uc?export=download&id=1V26WRjcQseoIjubwLXiKGRYDuAGLUSOs" -O "${name_script}.tar.xz" || let "error += 1"
+sudo -S wget "https://drive.google.com/uc?export=download&id=1V26WRjcQseoIjubwLXiKGRYDuAGLUSOs" -O "${name_script}.tar.xz" || let "error += 1"
 sudo -S tar -xpJf "${name_script}.tar.xz" -C "${script_dir_install}"
+sudo -S chmod +x "/usr/share/${name_script}-start/${name_script}.sh" || let "error += 1"
 sudo -S chmod +x "/usr/share/${name_script}-start/${name_script}.desktop" || let "error += 1"
 sudo -S cp -ax "/usr/share/${name_script}-start/${name_script}.desktop" "/usr/share/applications/" || let "error += 1"
 cd
 sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || true
 
 #формируем информацию о том что в итоге установили и показываем в терминал
+tput setaf 2
+sudo -S dpkg --list | echo "Установлена утилита:"`grep "${name_script}" | sed s/"ii"//g`
+#сброс цвета текста в терминале
+tput sgr0
 bash -c "xterm -hold -maximized -e glances --enable-plugin sensors" & sleep 5;sudo -S killall glances xterm
 
 

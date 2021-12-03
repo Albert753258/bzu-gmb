@@ -6,13 +6,15 @@ script_dir0=$(cd $(dirname "$0") && pwd);
 export script_dir="${script_dir0}"
 version0=`cat "${script_dir}/config/name_version"`
 export version="${version0}"
+source /etc/os-release
 # получение имени пользователя, который запустил скрипт, что бы в будущем модули могли его использовать
 echo "$USER" > "${script_dir}/config/user"
 # проверка что за система запустила скрипт
+#linuxos=`grep '^PRETTY_NAME' /etc/os-release`
 
 # запрос пароля супер пользователя, который дальше будет поставляться где требуется в качестве глобальной переменной, до конца работы скрипта
-pass_user0=$(zenity --entry --width=128 --height=128 --title="Запрос пароля" --text="Для работы скрипта ${version} требуется Ваш пароль superuser(root):" --hide-text)
-source /etc/os-release
+pass_user0=$(GTK_THEME="Adwaita-dark" zenity --entry --width=128 --height=128 --title="Запрос пароля" --text="Для работы скрипта ${version} требуется Ваш пароль superuser(root):" --hide-text)
+
 if [[ "${pass_user0}" == "" ]]
 then
 zenity --error --text="Пароль не введён"
@@ -24,22 +26,10 @@ fi
 
 #функция для проверки пакетов на установку, если нужно установлевает
 function install_package {
-if [[ "${NAME}" == "Gentoo" ]]
-then
-if [ "$(eix-installed -a | grep $1)" == "" ]
-then
-sudo emerge $1
-package_status=`dpkg -s $1 | grep -oh "installed"`
-echo "$1:" $package_status
-fi
-else
 dpkg -s $1 | grep installed > /dev/null || echo "no installing $1 :(" | echo "$2" | sudo -S apt install -f -y $1
 package_status=`dpkg -s $1 | grep -oh "installed"`
 echo "$1:" $package_status
-fi
 }
-
-#загружаем список пакетов из файла в массив
 if [[ "${NAME}" == "Gentoo" ]]
 then
 #TODO correct packages for gentoo
@@ -80,12 +70,13 @@ i=$(($i + 1))
 done
 tput setaf 2
 echo "your Linux OS:["$linuxos_version"]"
+#echo "" > "${script_dir}/config/status"
 tput sgr0
 
 #
 if [[ $linuxos_version == "" ]]
 then
-if experemental_os=$(zenity --question --width=256 --height=128 --title='экперементальный режим' --text="Ваша операныонная система [$linux_os] не поддерживается ${version}. Включить эксперементальный режим совместимости с Ubuntu?") 
+if experemental_os=$(GTK_THEME="Adwaita-dark" zenity --question --width=256 --height=128 --title='экперементальный режим' --text="Ваша операныонная система [$linux_os] не поддерживается ${version}. Включить эксперементальный режим совместимости с Ubuntu?") 
 then
 echo "experimental" > "${script_dir}/config/status"
 echo $linux_os >> "${script_dir}/config/list-os"
