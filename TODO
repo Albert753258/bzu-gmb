@@ -6,12 +6,11 @@ playonlinux
 port-proton
 port-proton-addons
 proton-ge
-steam
 tfm-vulkan
 visual-studio-code-ppa
 vscodium-portable
-xboxdrv
 !!!bzugmb-launcher
+!!!add eselect-repository to depend
 
 #FULL-DONE:
 inxi
@@ -22,6 +21,8 @@ goverlay-ppa
 psensor-all
 glances
 cpu-x
+xboxdrv
+steam
 
 #HALF-DONE
 lutris - fix HODL
