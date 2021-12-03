@@ -1,0 +1,58 @@
+#TODO
+godot-ppa
+kate-editor-ppa
+obs-studio-ppa
+playonlinux
+port-proton
+port-proton-addons
+proton-ge
+steam
+tfm-vulkan
+visual-studio-code-ppa
+vscodium-portable
+xboxdrv
+!!!bzugmb-launcher
+
+#FULL-DONE:
+inxi
+feralgamemode
+mangohud-ppa
+vkbasalt-ppa
+goverlay-ppa
+psensor-all
+glances
+cpu-x
+
+#HALF-DONE
+lutris - fix HODL
+
+#SYSTEM
+bzu-gmb-launcher.sh
+
+#HARD
+xanmod-kernel-stable
+xanmod-kernel-latest
+liquorix-kernel-stable
+ubuntu-kernel-lowlatency
+mesa-kisak
+mesa-oibaf
+furmark-pack - не запускается из-за версии python
+corectrl
+corectrl2
+gnome-ext-pack-2004
+gnome-ext-pack-2110
+
+#HODL UNDONE
+mangohud
+vkbasalt
+goverlay
+
+
+
+#INCOMPATIBLE
+gdebi
+
+
+
+Kernel config options
+mangohud - powercap
