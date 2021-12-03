@@ -43,7 +43,7 @@ name_download_arh="Proton-6.20-GE-1.tar.gz"
 name_dir_installing="Proton-6.20-GE-1"
 cd
 rm -rf "${script_dir_install}/${name_dir_installing}" || true
-rm -f"${name_download_arh}" || true
+rm -f "${name_download_arh}" || true
 wget "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/6.20-GE-1/${name_download_arh}" || let "error += 1"
 tar xfvz "${name_download_arh}" -C "${script_dir_install}"
 #sudo -S chmod -R 777 "${script_dir_install}/${name_dir_installing}"
