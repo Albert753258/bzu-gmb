@@ -5,6 +5,7 @@
 
 # определение имени файла, папки где находиться скрипт и версию скрипта
 name_script0=`basename "$0"`
+source /etc/os-release
 name_script=`echo ${name_script0} | sed "s|.sh||g"`
 #echo ${name_script}
 script_dir0=$(cd $(dirname "$0") && pwd); name_cut="/modules-temp/${name_script}"
@@ -21,13 +22,26 @@ date_install=`date`
 tput setaf 2; echo "Установка утилиты cpu-x для вывода информации о процессоре, материнской платы, оперативной памяти, графического процессора и о самой операционной системе [https://x0rg.github.io/CPU-X/]. Версия скрипта 1.0, автор: Яцына М.А."
 tput sgr0
 
-#запуск основных команд модуля
-sudo -S apt install -f -y --reinstall cpu-x || let "error += 1"
 
+if [ "${NAME}" == "Gentoo" ]
+then
+sudo -S emerge app-misc/cpu-x || let "error += 1"
+echo "Установлена утилита:"`eix-installed -a | grep app-misc/cpu-x`
+else
+sudo -S apt install -f -y --reinstall cpu-x || let "error += 1"
 #формируем информацию о том что в итоге установили и показываем в терминал
 sudo dpkg --list | echo "Установлена утилита:"`grep "cpu-x" | sed s/"ii"//g`
 #сброс цвета текста в терминале
 tput sgr0
+fi
+
+
+
+#запуск основных команд модуля
+
+
+#формируем информацию о том что в итоге установили и показываем в терминал
+
 #тестовый запуск Psensor
 sudo -S cpu-x & sleep 5;sudo -S killall cpu-x
 

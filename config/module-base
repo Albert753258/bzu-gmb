@@ -204,7 +204,7 @@ Monitoring
 cpu-x это утилита для вывода информации о процессоре, материнской платы, оперативной памяти, графического процессора и о самой операционной системе. Также имеет встроенный бенчмарк процессора. Являться почти полным аналогом CPU-Z в среде windows
 Яцына М.А.
 cpu-x
-Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental
+Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental Gentoo/Linux
 #
 #
 root

@@ -1,5 +1,4 @@
 #TODO
-cpu-x
 gnome-ext-pack-2004
 gnome-ext-pack-2110
 godot-ppa
@@ -23,6 +22,7 @@ vkbasalt-ppa
 goverlay-ppa
 psensor-all
 glances
+cpu-x
 
 #HALF-DONE
 lutris - fix HODL
