@@ -214,7 +214,7 @@ GameTools
 xboxdrv это утилита для конфигурирования игровых устройств управления, изначальна была сделана для геймпада консоли Xbox, но в итоге поддерживает достаточно много устройств, утилита консольная, но есть и графическая оболочка для управления.
 Яцына М.А.
 xboxdrv
-Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental
+Ubuntu 20.04.3 LTS Ubuntu 21.10 Linux Mint 20.2 experimental Gentoo/Linux
 #
 #
 root

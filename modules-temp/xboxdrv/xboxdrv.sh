@@ -10,6 +10,7 @@ name_script=`echo ${name_script0} | sed "s|.sh||g"`
 script_dir0=$(cd $(dirname "$0") && pwd); name_cut="/modules-temp/${name_script}"
 #echo ${name_cut}
 #echo ${script_dir0}
+source /etc/os-release
 script_dir=`echo ${script_dir0} | sed "s|${name_cut}||g"`
 version0=`cat "${script_dir}/config/name_version"`
 version="${version0}"
@@ -26,7 +27,22 @@ sudo -S killall xboxdrv || true
 sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 sudo -S rm -r "/usr/share/${name_script}" || true
 sudo -S rm "/usr/share/applications/${name_script}.desktop" || true
+
+
+if [ "${NAME}" == "Gentoo" ]
+then
+sudo -S emerge games-util/xboxdrv || let "error += 1"
+echo "Установлена утилита:"`eix-installed -a | grep games-util/xboxdrv`
+else
 sudo -S apt install -f -y --reinstall xboxdrv
+tput setaf 2
+sudo -S dpkg --list | echo "Установлена утилита:"`grep "${name_script}" | sed s/"ii"//g`
+#сброс цвета текста в терминале
+tput sgr0
+fi
+
+
+
 sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp"|| let "error += 1"
 sudo -S wget "https://drive.google.com/uc?export=download&id=12P9aCmSYgXbtWbXuIDP6bUcu5G0xT0wo" -O "${name_script}.tar.xz" || let "error += 1"
@@ -37,11 +53,6 @@ sudo -S cp -ax /usr/share/${name_script}/${name_script}.desktop /usr/share/appli
 cd
 sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || true
 
-#формируем информацию о том что в итоге установили и показываем в терминал
-tput setaf 2
-sudo -S dpkg --list | echo "Установлена утилита:"`grep "${name_script}" | sed s/"ii"//g`
-#сброс цвета текста в терминале
-tput sgr0
 bash -c "${script_dir_install}${name_script}/${name_script}.sh" & sleep 5;sudo -S killall xboxdrv-qt-5.6-rc
 
 

@@ -1,6 +1,4 @@
 #TODO
-gnome-ext-pack-2004
-gnome-ext-pack-2110
 godot-ppa
 kate-editor-ppa
 obs-studio-ppa
@@ -40,6 +38,8 @@ mesa-oibaf
 furmark-pack - не запускается из-за версии python
 corectrl
 corectrl2
+gnome-ext-pack-2004
+gnome-ext-pack-2110
 
 #HODL UNDONE
 mangohud
