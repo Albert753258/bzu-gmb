@@ -5,7 +5,6 @@ obs-studio-ppa
 playonlinux
 port-proton
 port-proton-addons
-proton-ge
 tfm-vulkan
 visual-studio-code-ppa
 vscodium-portable
@@ -23,9 +22,11 @@ glances
 cpu-x
 xboxdrv
 steam
+proton-ge
+lutris
 
 #HALF-DONE
-lutris - fix HODL
+
 
 #SYSTEM
 bzu-gmb-launcher.sh
