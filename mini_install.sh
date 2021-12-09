@@ -52,7 +52,8 @@ echo "$1:" $package_status
 
 if [ "${NAME}" == "Gentoo" ]
 then
-echo ${pass_user} | sudo -S eselect repository remove -f bzugmb
+echo ${pass_user} | sudo -S emerge --update app-eselect/eselect-repository
+sudo -S eselect repository remove -f bzugmb
 sudo -S eselect repository add bzugmb git https://github.com/Albert753258/bzu-gmb-repo
 sudo -S emaint sync -r bzugmb
 sudo -S cp "${script_dir}/config/bzugmb-use" /etc/portage/packages.use/
