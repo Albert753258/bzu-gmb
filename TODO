@@ -2,7 +2,6 @@
 godot-ppa
 kate-editor-ppa
 obs-studio-ppa
-port-proton
 tfm-vulkan
 visual-studio-code-ppa
 vscodium-portable
@@ -24,6 +23,8 @@ steam
 proton-ge
 lutris
 port-proton-addons
+port-proton
+furmark-linux - Есть вариант получше
 
 #HALF-DONE
 
@@ -49,12 +50,6 @@ playonlinux - Используется python2
 mangohud
 vkbasalt
 goverlay
-
-
-
-#INCOMPATIBLE
-gdebi
-
 
 
 Kernel config options
