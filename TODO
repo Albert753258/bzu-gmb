@@ -5,8 +5,7 @@ obs-studio-ppa
 tfm-vulkan
 visual-studio-code-ppa
 vscodium-portable
-!!!bzugmb-launcher
-!!!add eselect-repository, pip to depend
+!!!add pip to depend
 !!!Add steam repo
 
 #FULL-DONE:
