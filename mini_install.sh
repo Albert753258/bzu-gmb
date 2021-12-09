@@ -12,7 +12,7 @@ fi
 #запрос пароля root для установки ПО необходимого для bzu-gmb
 read -sp 'Введите Пароль root:' pass_user
 echo " "
-
+source /etc/os-release
 
 #проверяем ввел пользователь пароль или нет
 if [[ "${pass_user}" == "" ]]
@@ -50,6 +50,10 @@ package_status=`dpkg -s $1 | grep -oh "installed"`
 echo "$1:" $package_status
 }
 
+if [ "${NAME}" == "Gentoo" ]
+then
+echo "Gentoo!"
+else
 #загружаем список пакетов из файла в массив
 readarray -t packages_list < "${script_dir}/config/packages-for-bzu-gmb"
 #задем переменной колличество пакетов в массиве
@@ -63,6 +67,7 @@ do
 install_package ${packages_list[$i]} ${pass_user}
 i=$(($i + 1))
 done
+fi
 
 #Создаем ярлык для скрипта
 echo "[Desktop Entry]" > "${script_dir}/${name_desktop_file}"
@@ -91,7 +96,7 @@ echo "$pass_user" | sudo -S chmod +x "${script_dir}/bzu-gmb-launcher.sh"
 echo "$pass_user" | sudo -S chmod +x "${script_dir}/bzu-gmb-gui-beta4.sh"
 
 #Уведомление пользователя, о том что он устанавил себе на ПК
-GTK_THEME="Adwaita-dark" zenity --text-info --html --url="https://drive.google.com/uc?export=view&id=1LZ_W8JSLBbVdppVHxUFnaXuhVpaszSYE" --title="Завершена установка ${version_bzu_gmb}" --width=640 --height=408  --cancel-label=""
+GTK_THEME="Adwaita-dark" zenity --text-info --url="https://drive.google.com/uc?export=view&id=1LZ_W8JSLBbVdppVHxUFnaXuhVpaszSYE" --title="Завершена установка ${version_bzu_gmb}" --width=640 --height=408  --cancel-label=""
 
 #busctl --user call "org.gnome.Shell" "/org/gnome/Shell" "org.gnome.Shell" "Eval" "s" 'Meta.restart("Restarting…")';
 exit 0
