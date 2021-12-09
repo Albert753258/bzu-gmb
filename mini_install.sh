@@ -52,6 +52,11 @@ echo "$1:" $package_status
 
 if [ "${NAME}" == "Gentoo" ]
 then
+echo ${pass_user} | sudo -S eselect repository remove -f bzugmb
+sudo -S eselect repository add bzugmb git https://github.com/Albert753258/bzu-gmb-repo
+sudo -S emaint sync -r bzugmb
+sudo -S cp "${script_dir}/config/bzugmb-use" /etc/portage/packages.use/
+cat < "${script_dir}/config/packages-for-bzu-gmb-gentoo" | xargs sudo -S emerge --update
 echo "Gentoo!"
 else
 #загружаем список пакетов из файла в массив

@@ -32,8 +32,9 @@ echo "$1:" $package_status
 }
 if [[ "${NAME}" == "Gentoo" ]]
 then
-#TODO correct packages for gentoo
-echo Gentoo
+echo ${pass_user} | sudo -S ls
+cat < "${script_dir}/config/packages-for-bzu-gmb-gentoo" | xargs sudo -S emerge --update
+echo "Gentoo!"
 else
 readarray -t packages_list < "${script_dir}/config/packages-for-bzu-gmb"
 fi
