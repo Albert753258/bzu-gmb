@@ -22,8 +22,8 @@ tput setaf 2; echo "Установка утилиты INXI для сбора и�
 tput sgr0
 
 #запуск основных команд модуля
-sudo -S emerge x11-terms/xterm || let "error += 1"
-sudo -S emerge sys-apps/inxi || let "error += 1"
+sudo -S emerge --update x11-terms/xterm || let "error += 1"
+sudo -S emerge --update sys-apps/inxi || let "error += 1"
 
 #формируем информацию о том что в итоге установили и показываем в терминал
 echo "Установлена утилита:"`eix-installed -a | grep sys-apps/inxi`

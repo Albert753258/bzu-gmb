@@ -27,7 +27,7 @@ tput sgr0
 
 #запуск основных команд модуля
 sudo -S killall lutris || true
-sudo -S emerge games-util/lutris || let "error += 1"
+sudo -S emerge --update games-util/lutris || let "error += 1"
 
 
 #формируем информацию о том что в итоге установили и показываем в терминал

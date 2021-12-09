@@ -22,7 +22,7 @@ tput setaf 2; echo "Установка утилиты cpu-x для вывода 
 tput sgr0
 
 #запуск основных команд модуля
-sudo -S emerge app-misc/cpu-x || let "error += 1"
+sudo -S emerge --update app-misc/cpu-x || let "error += 1"
 
 #формируем информацию о том что в итоге установили и показываем в терминал
 echo "Установлена утилита:"`eix-installed -a | grep app-misc/cpu-x`

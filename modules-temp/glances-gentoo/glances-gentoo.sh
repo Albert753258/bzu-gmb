@@ -26,7 +26,7 @@ sudo -S killall glances || true
 sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 sudo -S rm -r "/usr/share/${name_script}-start" || true
 sudo -S rm "/usr/share/applications/${name_script}.desktop" || true
-sudo -S emerge sys-process/glances || let "error += 1"
+sudo -S emerge --update sys-process/glances || let "error += 1"
 sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp"|| let "error += 1"
 sudo -S wget "https://drive.google.com/uc?export=download&id=1V26WRjcQseoIjubwLXiKGRYDuAGLUSOs" -O "${name_script}.tar.xz" || let "error += 1"

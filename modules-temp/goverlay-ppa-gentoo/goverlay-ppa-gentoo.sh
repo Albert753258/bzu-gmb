@@ -33,7 +33,7 @@ tput sgr0
 echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 echo "${pass_user}" | sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
-sudo -S emerge app-misc/goverlay || let "error += 1"
+sudo -S emerge --update app-misc/goverlay || let "error += 1"
 cd
 echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || true
 #формируем информацию о том что в итоге установили и показываем в терминал

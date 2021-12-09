@@ -24,7 +24,7 @@ tput sgr0
 #запуск основных команд модуля
 sudo -S eselect repository enable steam-overlay || let "error += 1"
 sudo -S emaint sync -r steam-overlay || let "error += 1"
-sudo -S emerge games-util/steam-launcher || let "error += 1"
+sudo -S emerge --update games-util/steam-launcher || let "error += 1"
 
 #формируем информацию о том что в итоге установили и показываем в терминал
 tput setaf 2

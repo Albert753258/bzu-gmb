@@ -26,7 +26,7 @@ sudo -S killall xboxdrv || true
 sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 sudo -S rm -r "/usr/share/xboxdrv" || true
 sudo -S rm "/usr/share/applications/xboxdrv.desktop" || true
-sudo -S emerge games-util/xboxdrv || let "error += 1"
+sudo -S emerge --update games-util/xboxdrv || let "error += 1"
 sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp"|| let "error += 1"
 sudo -S wget "https://drive.google.com/uc?export=download&id=12P9aCmSYgXbtWbXuIDP6bUcu5G0xT0wo" -O "${name_script}.tar.xz" || let "error += 1"

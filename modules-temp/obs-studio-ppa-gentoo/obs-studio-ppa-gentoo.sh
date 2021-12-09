@@ -33,13 +33,13 @@ tput sgr0
 echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 echo "${pass_user}" | sudo -S mkdir -p "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
 cd "${script_dir}/modules-temp/${name_script}/temp" || let "error += 1"
-echo "${pass_user}" | sudo -S emerge media-video/obs-studio || let "error += 1"
+echo "${pass_user}" | sudo -S emerge --update media-video/obs-studio || let "error += 1"
 # переходим в папку пользователя
 cd
 echo "${pass_user}" | sudo -S rm -r "${script_dir}/modules-temp/${name_script}/temp" || true
 
 # УСТАНОВКА ПЛАГИНА OBS-LINUXBROWSER
-echo "${pass_user}" | sudo -S emerge dev-util/cmake gnome-base/gconf
+echo "${pass_user}" | sudo -S emerge --update dev-util/cmake gnome-base/gconf
 #скачиваем архив с плагином и распаковываем его
 wget https://github.com/bazukas/obs-linuxbrowser/releases/download/0.6.1/linuxbrowser0.6.1-obs23.0.2-64bit.tgz
 #создаем папку плагины в конфигурации OBS-studio

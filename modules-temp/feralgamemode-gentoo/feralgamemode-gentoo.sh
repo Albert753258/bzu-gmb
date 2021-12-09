@@ -22,7 +22,7 @@ tput setaf 2; echo "Установка утилиты GameMode от Feral Intera
 tput sgr0
 
 #запуск основных команд модуля
-sudo -S emerge games-util/gamemode || let "error += 1"
+sudo -S emerge --update games-util/gamemode || let "error += 1"
 
 #формируем информацию о том что в итоге установили и показываем в терминал
 mesa_version=`inxi -G | grep "Mesa"`  || let "error += 1"
