@@ -2,14 +2,13 @@
 godot-ppa
 kate-editor-ppa
 obs-studio-ppa
-playonlinux
 port-proton
-port-proton-addons
 tfm-vulkan
 visual-studio-code-ppa
 vscodium-portable
 !!!bzugmb-launcher
-!!!add eselect-repository to depend
+!!!add eselect-repository, pip to depend
+!!!Add steam repo
 
 #FULL-DONE:
 inxi
@@ -24,6 +23,7 @@ xboxdrv
 steam
 proton-ge
 lutris
+port-proton-addons
 
 #HALF-DONE
 
@@ -43,6 +43,7 @@ corectrl
 corectrl2
 gnome-ext-pack-2004
 gnome-ext-pack-2110
+playonlinux - Используется python2
 
 #HODL UNDONE
 mangohud
