@@ -1,7 +1,6 @@
 #TODO
 godot-ppa
 kate-editor-ppa
-obs-studio-ppa
 tfm-vulkan
 visual-studio-code-ppa
 vscodium-portable
@@ -24,6 +23,8 @@ lutris
 port-proton-addons
 port-proton
 furmark-linux - Есть вариант получше
+obs-studio-ppa
+kdenlive-ppa - Тянет за собой кучу пакетов и проблемы с use-флагом
 
 #HALF-DONE
 
